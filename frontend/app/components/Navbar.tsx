@@ -2,15 +2,17 @@ import Link from "next/link";
 
 const Navbar = () => {
   const tabs = [
-    { name: "Why CodeCop", route: "/" },
-    { name: "How It Works", route: "/" },
-    { name: "Features", route: "/" },
-    { name: "About", route: "/" },
-    { name: "Pricing", route: "/" },
+    { name: "Why CodeCop", route: "#why-codecop" },
+    { name: "How It Works", route: "#how-it-works" },
+    { name: "Features", route: "#features" },
+    { name: "About", route: "#about" },
+    { name: "Pricing", route: "#pricing" },
   ];
   return (
     <div className="flex justify-between items-center bg-white border-2 border-[#e0e0e0] p-[6px] rounded-2xl gap-10">
-      <div className="pl-4 text-[34px] font-semibold">CodeCop</div>
+      <Link href={"/"} className="pl-4 text-[34px] font-semibold">
+        CodeCop
+      </Link>
       <div className="flex justify-center items-center gap-6 text-[16px]">
         {tabs.map((tab) => (
           <Link
@@ -38,7 +40,7 @@ const Navbar = () => {
         ))}
       </div>
       <Link
-        href={"/"}
+        href={"/dashboard"}
         className="bg-black text-white text-[18px] py-3 px-6 rounded-2xl"
       >
         Try CodeCop

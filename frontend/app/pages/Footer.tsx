@@ -2,11 +2,11 @@ import Link from "next/link";
 
 const Footer = () => {
   const tabs = [
-    { name: "Why CodeCop", route: "/" },
-    { name: "How It Works", route: "/" },
-    { name: "Features", route: "/" },
-    { name: "About", route: "/" },
-    { name: "Pricing", route: "/" },
+    { name: "Why CodeCop", route: "#why-codecop" },
+    { name: "How It Works", route: "#how-it-works" },
+    { name: "Features", route: "#features" },
+    { name: "About", route: "#about" },
+    { name: "Pricing", route: "#pricing" },
   ];
   return (
     <div className="bg-black min-h-screen flex flex-col justify-center items-center gap-24">
