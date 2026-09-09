@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 interface PriceProps {
   icon: string;
@@ -50,9 +51,12 @@ const Price = ({ icon, title, price, subtitle, points }: PriceProps) => {
           </div>
         ))}
       </div>
-      <button className="mt-10 w-full rounded-xl bg-[#1c76ff] py-4 text-[16px] font-medium transition-all duration-300 hover:-translate-y-1 hover:bg-[#3b8cff]">
+      <Link
+        href={"/dashboard"}
+        className="mt-10 w-full rounded-xl bg-[#1c76ff] py-4 text-[16px] text-center font-medium transition-all duration-300 hover:-translate-y-1 hover:bg-[#3b8cff]"
+      >
         Run {title}
-      </button>
+      </Link>
     </div>
   );
 };

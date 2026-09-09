@@ -40,7 +40,12 @@ const Dashboard = () => {
         )}
 
         {step === 3 && (
-          <StepThree nextStep={nextStep} previousStep={previousStep} />
+          <StepThree
+            nextStep={nextStep}
+            previousStep={previousStep}
+            scanType={scanType}
+            setScanType={setScanType}
+          />
         )}
 
         {step === 4 && <StepFour previousStep={previousStep} />}
