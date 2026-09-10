@@ -7,13 +7,14 @@ import StepTwo from "./components/StepTwo";
 import StepThree from "./components/StepThree";
 import StepFour from "./components/StepFour";
 import { useState } from "react";
+import type { Scan } from "../types/scan";
 
 const Dashboard = () => {
   const [step, setStep] = useState(1);
 
   const [githubLink, setGithubLink] = useState("");
   const [isVerified, setIsVerified] = useState(false);
-  const [scanType, setScanType] = useState("");
+  const [scanType, setScanType] = useState<Scan | "">("");
   const [paymentSuccessful, setPaymentSuccessful] = useState(false);
 
   const nextStep = () => {
@@ -48,7 +49,14 @@ const Dashboard = () => {
           />
         )}
 
-        {step === 4 && <StepFour previousStep={previousStep} />}
+        {step === 4 && (
+          <StepFour
+            previousStep={previousStep}
+            paymentSuccessful={paymentSuccessful}
+            setPaymentSuccessful={setPaymentSuccessful}
+            scanType={scanType}
+          />
+        )}
       </main>
       <Footer />
     </div>

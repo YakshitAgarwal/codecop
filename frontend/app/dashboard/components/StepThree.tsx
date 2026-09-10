@@ -1,14 +1,13 @@
 import ScanType from "./ScanType";
 import React from "react";
 import { ChevronLeft } from "lucide-react";
-
-type ScanType = "quick" | "deep" | "sandbox";
+import type { Scan } from "@/app/types/scan";
 
 interface ScanProps {
   nextStep: () => void;
   previousStep: () => void;
-  scanType: ScanType | "";
-  setScanType: React.Dispatch<React.SetStateAction<ScanType | "">>;
+  scanType: Scan | "";
+  setScanType: React.Dispatch<React.SetStateAction<Scan | "">>;
 }
 
 const StepThree = ({
@@ -17,7 +16,7 @@ const StepThree = ({
   scanType,
   setScanType,
 }: ScanProps) => {
-  const handleScanSelect = (selectedScan: ScanType) => {
+  const handleScanSelect = (selectedScan: Scan) => {
     setScanType(selectedScan);
     nextStep();
   };
